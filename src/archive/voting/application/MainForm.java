@@ -29,30 +29,92 @@ public class MainForm extends javax.swing.JFrame {
     private void initComponents() {
 
         Logo = new javax.swing.JRadioButton();
+        btnVote = new javax.swing.JButton();
+        btnHSO = new javax.swing.JButton();
+        btnEC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/archive/voting/application/Picture1.png"))); // NOI18N
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/archive/voting/application/Logo.png"))); // NOI18N
+
+        btnVote.setText("Vote");
+        btnVote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoteActionPerformed(evt);
+            }
+        });
+
+        btnHSO.setText("HSO");
+        btnHSO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHSOActionPerformed(evt);
+            }
+        });
+
+        btnEC.setText("EC");
+        btnEC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnECActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(Logo)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVote)
+                    .addComponent(btnHSO)
+                    .addComponent(btnEC))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(Logo)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(btnVote)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHSO)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEC)))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoteActionPerformed
+        // TODO add your handling code here:
+        
+        // will open the current election ballot
+    }//GEN-LAST:event_btnVoteActionPerformed
+
+    private void btnHSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHSOActionPerformed
+        // TODO add your handling code here:
+        
+        // will open a panel that only the HSO can access
+        LoginDialog hsologindialog = new LoginDialog(this, true);
+        hsologindialog.setVisible(true);
+        // will verify that the user accessing is the HSO
+        
+    }//GEN-LAST:event_btnHSOActionPerformed
+
+    private void btnECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnECActionPerformed
+        // TODO add your handling code here:
+        // will open a panel that only the HSO can access
+        LoginDialog hsologindialog = new LoginDialog(this, true);
+        hsologindialog.setVisible(true);
+        // will verify that the user accessing is the HSO
+    }//GEN-LAST:event_btnECActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,5 +153,8 @@ public class MainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Logo;
+    private javax.swing.JButton btnEC;
+    private javax.swing.JButton btnHSO;
+    private javax.swing.JButton btnVote;
     // End of variables declaration//GEN-END:variables
 }
