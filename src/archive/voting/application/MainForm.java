@@ -86,7 +86,7 @@ public class MainForm extends javax.swing.JFrame {
                         .addComponent(btnHSO)
                         .addGap(18, 18, 18)
                         .addComponent(btnEC)))
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
