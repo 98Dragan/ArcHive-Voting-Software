@@ -13,14 +13,14 @@ import javax.swing.JOptionPane;
  *
  * @author i_lke
  */
-public class ElectionSelectionDialog extends javax.swing.JDialog {
+public class CreateElection extends javax.swing.JFrame {
 
     /**
-     * Creates new form ElectionSelectionDialog
+     * Creates new form CreateElection
      */
     DefaultListModel BallotList = new DefaultListModel();
-    public ElectionSelectionDialog(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    
+    public CreateElection() {
         initComponents();
         listBallots.setModel(BallotList);
         BallotList.addElement("Custom");
@@ -38,23 +38,16 @@ public class ElectionSelectionDialog extends javax.swing.JDialog {
 
         lblElectionName = new javax.swing.JLabel();
         txtElectionName = new javax.swing.JTextField();
-        btnSubmit = new javax.swing.JButton();
         btnRestriction = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listBallots = new javax.swing.JList();
         btnCreate = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblElectionName.setText("Election Name:");
-
-        btnSubmit.setText("Submit");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
-            }
-        });
 
         btnRestriction.setText("Restrictions");
         btnRestriction.addActionListener(new java.awt.event.ActionListener() {
@@ -62,6 +55,8 @@ public class ElectionSelectionDialog extends javax.swing.JDialog {
                 btnRestrictionActionPerformed(evt);
             }
         });
+
+        jLabel1.setText("Ballots:");
 
         listBallots.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -77,7 +72,12 @@ public class ElectionSelectionDialog extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setText("Ballots:");
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,11 +127,6 @@ public class ElectionSelectionDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSubmitActionPerformed
-
     private void btnRestrictionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestrictionActionPerformed
         // TODO add your handling code here:
         new VoterRestrictions().setVisible(true);
@@ -153,6 +148,11 @@ public class ElectionSelectionDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnCreateActionPerformed
 
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -170,27 +170,20 @@ public class ElectionSelectionDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ElectionSelectionDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateElection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ElectionSelectionDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateElection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ElectionSelectionDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateElection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ElectionSelectionDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateElection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ElectionSelectionDialog dialog = new ElectionSelectionDialog(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new CreateElection().setVisible(true);
             }
         });
     }

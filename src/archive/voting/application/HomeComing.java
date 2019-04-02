@@ -34,7 +34,7 @@ public class HomeComing extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         SubmitContestNameBox = new javax.swing.JTextField();
         SubmitContestsantButton = new javax.swing.JButton();
-        SubmitButton = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,10 +56,10 @@ public class HomeComing extends javax.swing.JFrame {
             }
         });
 
-        SubmitButton.setText("Submit");
-        SubmitButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SubmitButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
@@ -84,7 +84,7 @@ public class HomeComing extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(SubmitButton)))
+                        .addComponent(btnSubmit)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -101,9 +101,9 @@ public class HomeComing extends javax.swing.JFrame {
                             .addComponent(SubmitContestNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(SubmitContestsantButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
-                .addComponent(SubmitButton)
-                .addGap(37, 37, 37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addComponent(btnSubmit)
+                .addContainerGap())
         );
 
         pack();
@@ -113,9 +113,10 @@ public class HomeComing extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SubmitContestsantButtonActionPerformed
 
-    private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SubmitButtonActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,9 +155,9 @@ public class HomeComing extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList COntestantNames;
-    private javax.swing.JButton SubmitButton;
     private javax.swing.JTextField SubmitContestNameBox;
     private javax.swing.JButton SubmitContestsantButton;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;

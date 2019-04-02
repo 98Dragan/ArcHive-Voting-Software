@@ -28,15 +28,15 @@ public class ECForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCreateBallot = new javax.swing.JButton();
+        btnCreateElection = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnCreateBallot.setText("Create Ballot");
-        btnCreateBallot.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateElection.setText("Create Election");
+        btnCreateElection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateBallotActionPerformed(evt);
+                btnCreateElectionActionPerformed(evt);
             }
         });
 
@@ -56,16 +56,16 @@ public class ECForm extends javax.swing.JFrame {
                 .addComponent(btnSubmit)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(btnCreateBallot)
+                .addContainerGap()
+                .addComponent(btnCreateElection)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(193, Short.MAX_VALUE)
-                .addComponent(btnCreateBallot)
-                .addGap(50, 50, 50)
+                .addContainerGap()
+                .addComponent(btnCreateElection)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
                 .addComponent(btnSubmit)
                 .addContainerGap())
         );
@@ -78,11 +78,13 @@ public class ECForm extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void btnCreateBallotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateBallotActionPerformed
+    private void btnCreateElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateElectionActionPerformed
         // TODO add your handling code here:
-        CustomBallotDialog customballotdialog = new CustomBallotDialog(this, true);
-        customballotdialog.setVisible(true);
-    }//GEN-LAST:event_btnCreateBallotActionPerformed
+        new CreateElection().setVisible(true);
+        /*
+        ElectionSelectionDialog electionselectiondialog = new ElectionSelectionDialog(this,true);
+        electionselectiondialog.setVisible(true);*/
+    }//GEN-LAST:event_btnCreateElectionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,7 +122,7 @@ public class ECForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCreateBallot;
+    private javax.swing.JButton btnCreateElection;
     private javax.swing.JButton btnSubmit;
     // End of variables declaration//GEN-END:variables
 }

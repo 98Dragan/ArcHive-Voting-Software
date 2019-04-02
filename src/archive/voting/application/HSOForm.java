@@ -42,8 +42,10 @@ public class HSOForm extends javax.swing.JFrame {
         txtEC = new javax.swing.JTextField();
         lblEC = new javax.swing.JLabel();
         lblECName = new javax.swing.JLabel();
-        btnCreateElection = new javax.swing.JButton();
+        btnCertifyElection = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
+        btnDisqualifyVote = new javax.swing.JButton();
+        btnRecountVotes = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -85,10 +87,10 @@ public class HSOForm extends javax.swing.JFrame {
 
         lblECName.setText("Insert Name:");
 
-        btnCreateElection.setText("Create Election");
-        btnCreateElection.addActionListener(new java.awt.event.ActionListener() {
+        btnCertifyElection.setText("Certify Election");
+        btnCertifyElection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateElectionActionPerformed(evt);
+                btnCertifyElectionActionPerformed(evt);
             }
         });
 
@@ -98,6 +100,10 @@ public class HSOForm extends javax.swing.JFrame {
                 btnSubmitActionPerformed(evt);
             }
         });
+
+        btnDisqualifyVote.setText("Disqualify Vote");
+
+        btnRecountVotes.setText("Recount Votes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,12 +123,15 @@ public class HSOForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEC, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                             .addComponent(jScrollPane2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCreateElection)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSubmit)))
+                        .addComponent(btnSubmit))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCertifyElection)
+                            .addComponent(btnDisqualifyVote)
+                            .addComponent(btnRecountVotes))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -142,8 +151,12 @@ public class HSOForm extends javax.swing.JFrame {
                         .addComponent(btnRemoveEC))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnCreateElection)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addComponent(btnCertifyElection)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDisqualifyVote)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRecountVotes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(btnSubmit)
                 .addContainerGap())
         );
@@ -170,11 +183,10 @@ public class HSOForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRemoveECActionPerformed
 
-    private void btnCreateElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateElectionActionPerformed
+    private void btnCertifyElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCertifyElectionActionPerformed
         // TODO add your handling code here:
-        ElectionSelectionDialog electionselectiondialog = new ElectionSelectionDialog(this,true);
-        electionselectiondialog.setVisible(true);
-    }//GEN-LAST:event_btnCreateElectionActionPerformed
+        
+    }//GEN-LAST:event_btnCertifyElectionActionPerformed
 
     private void txtECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtECActionPerformed
         // TODO add your handling code here:
@@ -222,7 +234,9 @@ public class HSOForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddEC;
-    private javax.swing.JButton btnCreateElection;
+    private javax.swing.JButton btnCertifyElection;
+    private javax.swing.JButton btnDisqualifyVote;
+    private javax.swing.JButton btnRecountVotes;
     private javax.swing.JButton btnRemoveEC;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JList jList1;

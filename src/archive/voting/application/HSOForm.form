@@ -65,13 +65,17 @@
                           <Component id="jScrollPane2" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnCreateElection" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="btnSubmit" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnCertifyElection" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDisqualifyVote" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnRecountVotes" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -98,8 +102,12 @@
                   <Component id="jScrollPane2" min="-2" pref="83" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnCreateElection" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="113" max="32767" attributes="0"/>
+              <Component id="btnCertifyElection" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="btnDisqualifyVote" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="btnRecountVotes" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="45" max="32767" attributes="0"/>
               <Component id="btnSubmit" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -160,12 +168,12 @@
         <Property name="text" type="java.lang.String" value="Insert Name:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCreateElection">
+    <Component class="javax.swing.JButton" name="btnCertifyElection">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Create Election"/>
+        <Property name="text" type="java.lang.String" value="Certify Election"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateElectionActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCertifyElectionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSubmit">
@@ -175,6 +183,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmitActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDisqualifyVote">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disqualify Vote"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRecountVotes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Recount Votes"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
