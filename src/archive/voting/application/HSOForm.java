@@ -175,8 +175,8 @@ public class HSOForm extends javax.swing.JFrame {
            ECList.removeElement(txtEC.getText());
            txtEC.setText("");
         }
-        else if(!((String) jList1.getSelectedValue()).isEmpty()){
-            ECList.removeElement(jList1.getSelectedValue());
+        else if(!((String) listECs.getSelectedValue()).isEmpty()){
+            ECList.removeElement(listECs.getSelectedValue());
         }
         else{
             JOptionPane.showMessageDialog(this,"Election Commissioner not specified");
