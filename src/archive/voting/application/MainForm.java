@@ -102,8 +102,11 @@ public class MainForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         // will open a panel that only the HSO can access
+        /*
         LoginDialog hsologindialog = new LoginDialog(this, true);
         hsologindialog.setVisible(true);
+        */
+        new HSOForm().setVisible(true);
         // will verify that the user accessing is the HSO
         
     }//GEN-LAST:event_btnHSOActionPerformed
@@ -111,8 +114,11 @@ public class MainForm extends javax.swing.JFrame {
     private void btnECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnECActionPerformed
         // TODO add your handling code here:
         // will open a panel that only the HSO can access
+        /*
         LoginDialog hsologindialog = new LoginDialog(this, true);
         hsologindialog.setVisible(true);
+        */
+        new ECForm().setVisible(true);
         // will verify that the user accessing is the HSO
     }//GEN-LAST:event_btnECActionPerformed
 
