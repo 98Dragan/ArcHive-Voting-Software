@@ -5,10 +5,6 @@
  */
 
 package archive.voting.application;
-
-import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author i_lke
@@ -18,13 +14,8 @@ public class CreateElection extends javax.swing.JFrame {
     /**
      * Creates new form CreateElection
      */
-    DefaultListModel BallotList = new DefaultListModel();
-    
     public CreateElection() {
         initComponents();
-        listBallots.setModel(BallotList);
-        BallotList.addElement("Custom");
-        BallotList.addElement("HomeComing");
     }
 
     /**
@@ -39,11 +30,8 @@ public class CreateElection extends javax.swing.JFrame {
         lblElectionName = new javax.swing.JLabel();
         txtElectionName = new javax.swing.JTextField();
         btnRestriction = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listBallots = new javax.swing.JList();
-        btnCreate = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
+        btnBallot = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,26 +44,17 @@ public class CreateElection extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Ballots:");
-
-        listBallots.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(listBallots);
-
-        btnCreate.setText("Create");
-        btnCreate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateActionPerformed(evt);
-            }
-        });
-
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
+            }
+        });
+
+        btnBallot.setText("Ballot");
+        btnBallot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBallotActionPerformed(evt);
             }
         });
 
@@ -94,15 +73,11 @@ public class CreateElection extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnRestriction)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBallot))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnSubmit)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreate))
-                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,16 +87,12 @@ public class CreateElection extends javax.swing.JFrame {
                     .addComponent(lblElectionName)
                     .addComponent(txtElectionName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnRestriction)
-                .addGap(7, 7, 7)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCreate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRestriction)
+                    .addComponent(btnBallot))
+                .addGap(36, 36, 36)
                 .addComponent(btnSubmit)
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,26 +103,15 @@ public class CreateElection extends javax.swing.JFrame {
         new VoterRestrictions().setVisible(true);
     }//GEN-LAST:event_btnRestrictionActionPerformed
 
-    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        // TODO add your handling code here:
-        if(((String ) listBallots.getSelectedValue()).isEmpty())
-        {
-            JOptionPane.showMessageDialog(this, "Ballot not selected");
-        }
-        else if(((String) listBallots.getSelectedValue()).equals("Custom"))
-        {
-            new CustomBallot().setVisible(true);
-        }
-        else if(((String) listBallots.getSelectedValue()).equals("HomeComing"))
-        {
-            new HomeComing().setVisible(true);
-        }
-    }//GEN-LAST:event_btnCreateActionPerformed
-
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btnBallotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBallotActionPerformed
+        // TODO add your handling code here:
+        new BallotSelection().setVisible(true);
+    }//GEN-LAST:event_btnBallotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,13 +149,10 @@ public class CreateElection extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnBallot;
     private javax.swing.JButton btnRestriction;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblElectionName;
-    private javax.swing.JList listBallots;
     private javax.swing.JTextField txtElectionName;
     // End of variables declaration//GEN-END:variables
 }

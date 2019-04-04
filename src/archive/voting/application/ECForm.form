@@ -30,7 +30,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnCreateElection" min="-2" max="-2" attributes="0"/>
+              <Component id="btnCreateBallot" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -39,7 +39,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnCreateElection" min="-2" max="-2" attributes="0"/>
+              <Component id="btnCreateBallot" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="232" max="32767" attributes="0"/>
               <Component id="btnSubmit" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -48,12 +48,12 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnCreateElection">
+    <Component class="javax.swing.JButton" name="btnCreateBallot">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Create Election"/>
+        <Property name="text" type="java.lang.String" value="Create Ballot"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateElectionActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateBallotActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSubmit">

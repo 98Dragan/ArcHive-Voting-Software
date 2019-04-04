@@ -70,7 +70,7 @@ public class MainForm extends javax.swing.JFrame {
                     .addComponent(btnVote)
                     .addComponent(btnHSO)
                     .addComponent(btnEC))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,13 +80,13 @@ public class MainForm extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addGap(65, 65, 65)
                         .addComponent(btnVote)
                         .addGap(18, 18, 18)
                         .addComponent(btnHSO)
                         .addGap(18, 18, 18)
                         .addComponent(btnEC)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();

@@ -46,6 +46,7 @@ public class HSOForm extends javax.swing.JFrame {
         btnSubmit = new javax.swing.JButton();
         btnDisqualifyVote = new javax.swing.JButton();
         btnRecountVotes = new javax.swing.JButton();
+        btnCreateElection = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -105,6 +106,13 @@ public class HSOForm extends javax.swing.JFrame {
 
         btnRecountVotes.setText("Recount Votes");
 
+        btnCreateElection.setText("Create Election");
+        btnCreateElection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateElectionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,10 +136,13 @@ public class HSOForm extends javax.swing.JFrame {
                         .addComponent(btnSubmit))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCertifyElection)
                             .addComponent(btnDisqualifyVote)
                             .addComponent(btnRecountVotes))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCertifyElection)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCreateElection)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -151,7 +162,9 @@ public class HSOForm extends javax.swing.JFrame {
                         .addComponent(btnRemoveEC))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnCertifyElection)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCertifyElection)
+                    .addComponent(btnCreateElection))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDisqualifyVote)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -197,6 +210,14 @@ public class HSOForm extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnSubmitActionPerformed
 
+    private void btnCreateElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateElectionActionPerformed
+        // TODO add your handling code here:
+        new CreateElection().setVisible(true);
+        /*
+        ElectionSelectionDialog electionselectiondialog = new ElectionSelectionDialog(this,true);
+        electionselectiondialog.setVisible(true);*/
+    }//GEN-LAST:event_btnCreateElectionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +256,7 @@ public class HSOForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddEC;
     private javax.swing.JButton btnCertifyElection;
+    private javax.swing.JButton btnCreateElection;
     private javax.swing.JButton btnDisqualifyVote;
     private javax.swing.JButton btnRecountVotes;
     private javax.swing.JButton btnRemoveEC;
