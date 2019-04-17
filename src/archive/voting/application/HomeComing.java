@@ -56,7 +56,7 @@ public class HomeComing extends javax.swing.JFrame {
             }
         });
 
-        btnSubmit.setText("Submit");
+        btnSubmit.setText("Vote");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);

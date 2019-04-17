@@ -19,9 +19,11 @@ public class HSOForm extends javax.swing.JFrame {
      * Creates new form HSOForm
      */
     DefaultListModel ECList = new DefaultListModel();
+    DefaultListModel EList = new DefaultListModel();
     public HSOForm() {
         initComponents();
         listECs.setModel(ECList);
+        listElections.setModel(EList);
     }
 
     /**
@@ -35,18 +37,25 @@ public class HSOForm extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
-        btnAddEC = new javax.swing.JButton();
         btnRemoveEC = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         listECs = new javax.swing.JList();
-        txtEC = new javax.swing.JTextField();
         lblEC = new javax.swing.JLabel();
-        lblECName = new javax.swing.JLabel();
         btnCertifyElection = new javax.swing.JButton();
-        btnSubmit = new javax.swing.JButton();
         btnDisqualifyVote = new javax.swing.JButton();
         btnRecountVotes = new javax.swing.JButton();
         btnCreateElection = new javax.swing.JButton();
+        lblElections = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listElections = new javax.swing.JList();
+        btnRemoveElection = new javax.swing.JButton();
+        lblECName = new javax.swing.JLabel();
+        txtECID = new javax.swing.JTextField();
+        lblECName1 = new javax.swing.JLabel();
+        txtEName = new javax.swing.JTextField();
+        btnECClear = new javax.swing.JButton();
+        btnLogOut = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -57,14 +66,7 @@ public class HSOForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnAddEC.setText("Add Election Commisioner");
-        btnAddEC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddECActionPerformed(evt);
-            }
-        });
-
-        btnRemoveEC.setText("Remove Election Commisioner");
+        btnRemoveEC.setText("Remove Election Commissioner");
         btnRemoveEC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRemoveECActionPerformed(evt);
@@ -78,15 +80,7 @@ public class HSOForm extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(listECs);
 
-        txtEC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtECActionPerformed(evt);
-            }
-        });
-
         lblEC.setText("Election Commisioners:");
-
-        lblECName.setText("Insert Name:");
 
         btnCertifyElection.setText("Certify Election");
         btnCertifyElection.addActionListener(new java.awt.event.ActionListener() {
@@ -95,14 +89,12 @@ public class HSOForm extends javax.swing.JFrame {
             }
         });
 
-        btnSubmit.setText("Submit");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        btnDisqualifyVote.setText("Disqualify Vote");
+        btnDisqualifyVote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
+                btnDisqualifyVoteActionPerformed(evt);
             }
         });
-
-        btnDisqualifyVote.setText("Disqualify Vote");
 
         btnRecountVotes.setText("Recount Votes");
 
@@ -113,80 +105,137 @@ public class HSOForm extends javax.swing.JFrame {
             }
         });
 
+        lblElections.setText("Elections:");
+
+        listElections.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(listElections);
+
+        btnRemoveElection.setText("Remove Election");
+        btnRemoveElection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveElectionActionPerformed(evt);
+            }
+        });
+
+        lblECName.setText("ID#:");
+
+        txtECID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtECIDActionPerformed(evt);
+            }
+        });
+
+        lblECName1.setText("Name:");
+
+        txtEName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtENameActionPerformed(evt);
+            }
+        });
+
+        btnECClear.setText("Clear");
+
+        btnLogOut.setText("Log Out");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        jLabel2.setText("HSO Screen");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(btnAddEC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                                .addComponent(txtEC, javax.swing.GroupLayout.Alignment.LEADING))
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
                             .addComponent(btnRemoveEC)
-                            .addComponent(lblECName))
-                        .addGap(18, 18, 18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnECClear))
+                        .addComponent(lblElections)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblECName)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtECID, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblEC)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnLogOut)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblEC, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSubmit))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnDisqualifyVote)
-                            .addComponent(btnRecountVotes))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCertifyElection)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCreateElection)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnRemoveElection)
+                                .addGap(26, 26, 26)
+                                .addComponent(btnCertifyElection))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnDisqualifyVote, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(btnRecountVotes))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblECName1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtEName, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(btnCreateElection, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(64, 64, 64))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addContainerGap()
+                .addComponent(lblEC)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEC)
+                    .addComponent(txtECID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblECName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtEC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAddEC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRemoveEC))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCertifyElection)
-                    .addComponent(btnCreateElection))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnDisqualifyVote)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRemoveEC)
+                    .addComponent(btnECClear))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRecountVotes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(btnSubmit)
+                .addComponent(lblElections)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblECName1))
+                .addGap(4, 4, 4)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRemoveElection)
+                    .addComponent(btnCertifyElection))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRecountVotes)
+                    .addComponent(btnDisqualifyVote))
+                .addGap(11, 11, 11)
+                .addComponent(btnCreateElection)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLogOut)
+                .addGap(17, 17, 17))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddECActionPerformed
-        // TODO add your handling code here:
-        ECList.addElement(txtEC.getText());
-    }//GEN-LAST:event_btnAddECActionPerformed
-
     private void btnRemoveECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveECActionPerformed
         // TODO add your handling code here:
-        if(!(txtEC.getText()).isEmpty()){
-           ECList.removeElement(txtEC.getText());
-           txtEC.setText("");
+        if(!(txtECID.getText()).isEmpty()){
+           ECList.removeElement(txtECID.getText());
+           txtECID.setText("");
         }
         else if(!((String) listECs.getSelectedValue()).isEmpty()){
             ECList.removeElement(listECs.getSelectedValue());
@@ -198,25 +247,53 @@ public class HSOForm extends javax.swing.JFrame {
 
     private void btnCertifyElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCertifyElectionActionPerformed
         // TODO add your handling code here:
+        if(!(txtEName.getText()).isEmpty()){
+           EList.removeElement(txtECID.getText());
+           txtECID.setText("");
+        }
+        else if(!((String) listECs.getSelectedValue()).isEmpty()){
+            ECList.removeElement(listECs.getSelectedValue());
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Election Commissioner not specified");
+        }
+        JOptionPane.showConfirmDialog(this, "Election has been certified");
         
     }//GEN-LAST:event_btnCertifyElectionActionPerformed
-
-    private void txtECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtECActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtECActionPerformed
-
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnCreateElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateElectionActionPerformed
         // TODO add your handling code here:
         new CreateElection().setVisible(true);
-        /*
-        ElectionSelectionDialog electionselectiondialog = new ElectionSelectionDialog(this,true);
-        electionselectiondialog.setVisible(true);*/
+        
+        CreateElectionDialog createelectiondialog = new CreateElectionDialog(this,true);
+        createelectiondialog.setVisible(true);
     }//GEN-LAST:event_btnCreateElectionActionPerformed
+
+    private void btnRemoveElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveElectionActionPerformed
+        // TODO add your handling code here:
+        if(!(txtEName.getText()).isEmpty()){
+           EList.removeElement(txtEName.getText());
+           txtEName.setText("");
+        }
+        else if(!((String) listElections.getSelectedValue()).isEmpty()){
+            EList.removeElement(listElections.getSelectedValue());
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Election not specified");
+        }
+    }//GEN-LAST:event_btnRemoveElectionActionPerformed
+
+    private void btnDisqualifyVoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisqualifyVoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDisqualifyVoteActionPerformed
+
+    private void txtECIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtECIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtECIDActionPerformed
+
+    private void txtENameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtENameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtENameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,19 +331,26 @@ public class HSOForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddEC;
     private javax.swing.JButton btnCertifyElection;
     private javax.swing.JButton btnCreateElection;
     private javax.swing.JButton btnDisqualifyVote;
+    private javax.swing.JButton btnECClear;
+    private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnRecountVotes;
     private javax.swing.JButton btnRemoveEC;
-    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnRemoveElection;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblEC;
     private javax.swing.JLabel lblECName;
+    private javax.swing.JLabel lblECName1;
+    private javax.swing.JLabel lblElections;
     private javax.swing.JList listECs;
-    private javax.swing.JTextField txtEC;
+    private javax.swing.JList listElections;
+    private javax.swing.JTextField txtECID;
+    private javax.swing.JTextField txtEName;
     // End of variables declaration//GEN-END:variables
 }
