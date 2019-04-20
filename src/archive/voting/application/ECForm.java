@@ -52,6 +52,11 @@ public class ECForm extends javax.swing.JFrame {
         });
 
         btnLogOut.setText("Log Out");
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         jLabel1.setText("EC Screen");
@@ -118,6 +123,11 @@ public class ECForm extends javax.swing.JFrame {
     private void btnECVoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnECVoteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnECVoteActionPerformed
+
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
     /**
      * @param args the command line arguments

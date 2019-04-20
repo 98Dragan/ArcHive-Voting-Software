@@ -140,7 +140,7 @@ public class CreateElectionDialog extends javax.swing.JDialog {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(this, "Election Created");
+        JOptionPane.showConfirmDialog(this, "Create " + txtElectionName.getText() + " Election with " + txtECID.getText() + " as the commissioner?");
         this.setVisible(false);
     }//GEN-LAST:event_btnSubmitActionPerformed
 

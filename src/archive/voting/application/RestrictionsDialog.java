@@ -9,20 +9,21 @@ package archive.voting.application;
 import java.awt.Component;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
 
 /**
  *
- * @author User
+ * @author i_lke
  */
-public class VoterRestrictions extends javax.swing.JFrame {
+public class RestrictionsDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form VoterRestrictions
+     * Creates new form RestrictionsDialog
      */
     DefaultListModel Classes = new DefaultListModel();
-    public VoterRestrictions() {
+    public RestrictionsDialog(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
         listCRNs.setModel(Classes);
     }
@@ -36,135 +37,48 @@ public class VoterRestrictions extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listCRNs = new javax.swing.JList();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         pVote = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
-        btnSubmit = new javax.swing.JButton();
         pCollege = new javax.swing.JPanel();
         College2 = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
         jCheckBox9 = new javax.swing.JCheckBox();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txtCRN = new javax.swing.JTextField();
+        btnCRNSubmit = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listCRNs = new javax.swing.JList();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        btnCRNRemove = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnSubmit1 = new javax.swing.JButton();
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(153, 0, 51));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Who Can Vote:");
 
         jLabel2.setText("Limit to Only Allow Certain Colleges:");
-
-        jLabel3.setText("*Leaving Blank will");
-
-        jLabel4.setText("Allow All Colleges");
-
-        jLabel5.setText("To Participate");
-
-        jLabel6.setText("To Restrict to Student's only taking a certain Class Enter Class CRN Number:");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        listCRNs.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(listCRNs);
-
-        jLabel7.setText("CRNS Allowed:");
-
-        jLabel8.setText("To Participate");
-
-        jLabel9.setText("*Leaving Blank will");
-
-        jLabel10.setText("Allow All Classes");
-
-        jButton1.setText("Submit CRN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Remove Selected CRN");
-
-        jLabel11.setText("Enter the Amount of votes needed to ");
-
-        jLabel12.setText("If a Vote Needs More than a Majority Rule");
-
-        jLabel13.setText("determine who wins");
-
-        jLabel14.setText("*Leaving Blank Assumes Majority Wins");
-
-        jLabel15.setText("%");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jLabel16.setText("CRN:");
 
         jCheckBox1.setText("Freshman");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -219,16 +133,14 @@ public class VoterRestrictions extends javax.swing.JFrame {
                 .addComponent(jCheckBox5))
         );
 
-        btnSubmit.setText("Submit");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        College2.setText("College1");
+        College2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
+                College2ActionPerformed(evt);
             }
         });
 
-        College2.setText("College2");
-
-        jCheckBox6.setText("College1");
+        jCheckBox6.setText("College2");
 
         jCheckBox8.setText("College3");
 
@@ -260,6 +172,96 @@ public class VoterRestrictions extends javax.swing.JFrame {
                 .addComponent(jCheckBox9))
         );
 
+        jLabel12.setText("If a Vote Needs More than a Majority Rule");
+
+        jLabel11.setText("Enter the Amount of votes needed to ");
+
+        jLabel13.setText("determine who wins");
+
+        jLabel14.setText("*Leaving Blank Assumes Majority Wins");
+
+        jLabel3.setText("*Leaving Blank will");
+
+        jLabel4.setText("Allow All Colleges");
+
+        jLabel5.setText("To Participate");
+
+        jLabel15.setText("%");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel6.setText("To Restrict to Student's only taking a certain Class Enter Class CRN Number:");
+
+        jLabel16.setText("CRN:");
+
+        txtCRN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCRNActionPerformed(evt);
+            }
+        });
+
+        btnCRNSubmit.setText("Submit CRN");
+        btnCRNSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCRNSubmitActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("CRNS Allowed:");
+
+        listCRNs.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(listCRNs);
+
+        jLabel9.setText("*Leaving Blank will");
+
+        jLabel10.setText("Allow All Classes");
+
+        jLabel8.setText("To Participate");
+
+        btnCRNRemove.setText("Remove CRN");
+        btnCRNRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCRNRemoveActionPerformed(evt);
+            }
+        });
+
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
+        btnSubmit1.setText("Submit");
+        btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmit1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -274,15 +276,15 @@ public class VoterRestrictions extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(jLabel10)
                             .addComponent(jLabel8)
-                            .addComponent(jButton2)))
+                            .addComponent(btnCRNRemove)))
                     .addComponent(jLabel7)
                     .addComponent(jLabel6)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCRN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCRNSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pVote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -293,9 +295,6 @@ public class VoterRestrictions extends javax.swing.JFrame {
                             .addComponent(pCollege, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(btnSubmit))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -305,8 +304,17 @@ public class VoterRestrictions extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancel)
+                        .addGap(83, 83, 83))))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(553, Short.MAX_VALUE)
+                    .addComponent(btnSubmit1)
+                    .addGap(12, 12, 12)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,22 +337,23 @@ public class VoterRestrictions extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)
+                            .addComponent(txtCRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCRNSubmit)
                             .addComponent(jLabel16))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel7)
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton2)
+                                .addComponent(btnCRNRemove)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8))))
+                                .addComponent(jLabel8)))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
@@ -364,12 +373,21 @@ public class VoterRestrictions extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSubmit)))
-                .addContainerGap())
+                        .addComponent(btnCancel)
+                        .addGap(21, 21, 21))))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(414, Short.MAX_VALUE)
+                    .addComponent(btnSubmit1)
+                    .addGap(21, 21, 21)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         // TODO add your handling code here:
@@ -379,26 +397,53 @@ public class VoterRestrictions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtCRNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCRNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtCRNActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCRNSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRNSubmitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if(!(txtCRN.getText()).isEmpty())
+        {
+            Classes.addElement(txtCRN.getText());
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "CRN not specified");
+        }
+    }//GEN-LAST:event_btnCRNSubmitActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelActionPerformed
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
         // TODO add your handling code here:
         String strRestrictions = null;
         strRestrictions = this.getRestrictions();
         JOptionPane.showConfirmDialog(this, "Set these Restrictions: \n" + strRestrictions);
         this.setVisible(false);
-    }//GEN-LAST:event_btnSubmitActionPerformed
- 
+    }//GEN-LAST:event_btnSubmit1ActionPerformed
+
+    private void btnCRNRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRNRemoveActionPerformed
+        // TODO add your handling code here:
+         if(!(txtCRN.getText()).isEmpty()){
+           Classes.removeElement(txtCRN.getText());
+           txtCRN.setText("");
+        }
+        else if(!((String) listCRNs.getSelectedValue()).isEmpty()){
+            Classes.removeElement(listCRNs.getSelectedValue());
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"CRN not specified");
+        }
+    }//GEN-LAST:event_btnCRNRemoveActionPerformed
+
+    private void College2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_College2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_College2ActionPerformed
+
     public String getRestrictions()
 {
     String strVote = new String();
@@ -410,9 +455,9 @@ public class VoterRestrictions extends javax.swing.JFrame {
     Component [] vote = pVote.getComponents();
         for(Component x: vote){
             try{
-              JRadioButton tempBox = (JRadioButton) x;
+              JCheckBox tempBox = (JCheckBox) x;
             if(tempBox.isSelected()){
-                strVote = tempBox.getText();
+                strVote = strVote + "\n" + tempBox.getText();
             }
             }
             catch(Exception ex){
@@ -423,9 +468,9 @@ public class VoterRestrictions extends javax.swing.JFrame {
         Component [] college = pCollege.getComponents();
         for(Component x: college){
             try{
-              JRadioButton tempBox = (JRadioButton) x;
+              JCheckBox tempBox = (JCheckBox) x;
             if(tempBox.isSelected()){
-                strCollege = tempBox.getText();
+                strCollege = strCollege + "\n" + tempBox.getText();
             }
             }
             catch(Exception ex){
@@ -433,14 +478,14 @@ public class VoterRestrictions extends javax.swing.JFrame {
             }
             
         }
-        List tempList = listCRNs.getSelectedValuesList();
-        for(int i = 0; i < tempList.size(); i++)
+        
+        for(int i = 0; i < Classes.size(); i++)
         {
             try
             {
                     if(!Classes.isEmpty())
                     {
-                            strCRNs = strCRNs + "\n" + tempList.get(i);
+                            strCRNs = strCRNs + "\n" + Classes.get(i);
                     }
             }
             catch(Exception ex) 
@@ -448,7 +493,7 @@ public class VoterRestrictions extends javax.swing.JFrame {
                     System.out.println("Error");
             }
         }
-    return "Who Can Vote: " + strVote + "\n" + "Allowed Colleges: " + strCollege + "\n" + "Toppings: " + strCRNs;
+    return "Who Can Vote: " + strVote + "\n" + "Allowed Colleges: " + strCollege + "\n" + "Allowed CRNs: " + strCRNs;
 }
     /**
      * @param args the command line arguments
@@ -467,29 +512,37 @@ public class VoterRestrictions extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VoterRestrictions.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RestrictionsDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VoterRestrictions.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RestrictionsDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VoterRestrictions.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RestrictionsDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VoterRestrictions.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RestrictionsDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VoterRestrictions().setVisible(true);
+                RestrictionsDialog dialog = new RestrictionsDialog(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox College2;
-    private javax.swing.JButton btnSubmit;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCRNRemove;
+    private javax.swing.JButton btnCRNSubmit;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnSubmit1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -515,16 +568,11 @@ public class VoterRestrictions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JList listCRNs;
     private javax.swing.JPanel pCollege;
     private javax.swing.JPanel pVote;
+    private javax.swing.JTextField txtCRN;
     // End of variables declaration//GEN-END:variables
 }

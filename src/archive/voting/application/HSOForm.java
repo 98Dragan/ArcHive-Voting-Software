@@ -140,6 +140,11 @@ public class HSOForm extends javax.swing.JFrame {
         btnECClear.setText("Clear");
 
         btnLogOut.setText("Log Out");
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         jLabel2.setText("HSO Screen");
@@ -294,6 +299,11 @@ public class HSOForm extends javax.swing.JFrame {
     private void txtENameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtENameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtENameActionPerformed
+
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
     /**
      * @param args the command line arguments
