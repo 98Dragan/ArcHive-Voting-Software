@@ -135,7 +135,7 @@ public class BinaryOptions extends javax.swing.JFrame {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        if(!txtBallotName.getSelectedText().isEmpty() && !taPrompt.getText().isEmpty())
+        if(!txtBallotName.getText().isEmpty() && !taPrompt.getText().isEmpty())
         {
             if(JOptionPane.showConfirmDialog(this, "Are you sure that you want to create " + txtBallotName.getText() + " ballot?") == 0)
             {

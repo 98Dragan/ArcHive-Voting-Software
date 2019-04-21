@@ -23,9 +23,9 @@ public class BinaryBallotDialog extends javax.swing.JDialog {
     public BinaryBallotDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        //demonstration only
         taPrompt.setText("Will you hire ArcHive?");
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
