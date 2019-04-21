@@ -6,6 +6,9 @@
 
 package archive.voting.application;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author i_lke
@@ -15,8 +18,15 @@ public class ECForm extends javax.swing.JFrame {
     /**
      * Creates new form ECForm
      */
+    DefaultComboBoxModel election = new DefaultComboBoxModel();
     public ECForm() {
         initComponents();
+        cbElection.setModel(election);
+        HSOForm hsoform = new HSOForm();
+        election.addElement(hsoform.getElection());
+        //for demonstration only
+        election.addElement("ArcHive");
+        election.addElement("HomeComing");
     }
 
     /**
@@ -32,7 +42,7 @@ public class ECForm extends javax.swing.JFrame {
         btnECVote = new javax.swing.JButton();
         btnLogOut = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbElection = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,7 +71,12 @@ public class ECForm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         jLabel1.setText("EC Screen");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbElection.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbElection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbElectionActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Election:");
 
@@ -80,7 +95,7 @@ public class ECForm extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cbElection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(106, 106, 106)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +108,7 @@ public class ECForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbElection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,20 +129,41 @@ public class ECForm extends javax.swing.JFrame {
 
     private void btnCreateBallotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateBallotActionPerformed
         // TODO add your handling code here:
+        if(!election.getSelectedItem().toString().isEmpty())
+        {
         new BallotSelection().setVisible(true);
-        /*
-        ElectionSelectionDialog electionselectiondialog = new ElectionSelectionDialog(this,true);
-        electionselectiondialog.setVisible(true);*/
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Please select an Election");
+        }
     }//GEN-LAST:event_btnCreateBallotActionPerformed
 
     private void btnECVoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnECVoteActionPerformed
         // TODO add your handling code here:
+       if(cbElection.getSelectedItem().toString().equals("ArcHive"))
+        {
+             BinaryBallotDialog binaryballotdialog = new BinaryBallotDialog(this, true);
+             binaryballotdialog.setVisible(true);
+        }
+        else if(cbElection.getSelectedItem().toString().equals("HomeComing"))
+        {
+            new HomeComing().setVisible(true);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Please pick an Election.");
+        }
     }//GEN-LAST:event_btnECVoteActionPerformed
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void cbElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbElectionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbElectionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,7 +204,7 @@ public class ECForm extends javax.swing.JFrame {
     private javax.swing.JButton btnCreateBallot;
     private javax.swing.JButton btnECVote;
     private javax.swing.JButton btnLogOut;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox cbElection;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

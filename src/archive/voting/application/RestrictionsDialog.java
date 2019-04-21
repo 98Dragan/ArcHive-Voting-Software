@@ -456,9 +456,13 @@ public class RestrictionsDialog extends javax.swing.JDialog {
         for(Component x: vote){
             try{
               JCheckBox tempBox = (JCheckBox) x;
-            if(tempBox.isSelected()){
-                strVote = strVote + "\n" + tempBox.getText();
-            }
+                if(tempBox.isSelected()){
+                    strVote = strVote + "\n" + tempBox.getText();
+                }
+                else
+                {
+                    strVote = "Anyboy";
+                }
             }
             catch(Exception ex){
                 System.out.println("Cast Error");
@@ -469,9 +473,13 @@ public class RestrictionsDialog extends javax.swing.JDialog {
         for(Component x: college){
             try{
               JCheckBox tempBox = (JCheckBox) x;
-            if(tempBox.isSelected()){
-                strCollege = strCollege + "\n" + tempBox.getText();
-            }
+                if(tempBox.isSelected()){
+                    strCollege = strCollege + "\n" + tempBox.getText();
+                }
+                else
+                {
+                    strCollege = "Any";
+                }
             }
             catch(Exception ex){
                 System.out.println("Cast Error");
@@ -486,6 +494,10 @@ public class RestrictionsDialog extends javax.swing.JDialog {
                     if(!Classes.isEmpty())
                     {
                             strCRNs = strCRNs + "\n" + Classes.get(i);
+                    }
+                    else
+                    {
+                        strCRNs = "Any";
                     }
             }
             catch(Exception ex) 

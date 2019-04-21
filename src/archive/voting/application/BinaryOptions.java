@@ -36,7 +36,7 @@ public class BinaryOptions extends javax.swing.JFrame {
         taPrompt = new javax.swing.JTextArea();
         lblBallotName = new javax.swing.JLabel();
         txtBallotName = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,10 +62,10 @@ public class BinaryOptions extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
@@ -97,7 +97,7 @@ public class BinaryOptions extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnCancel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(btnSubmit)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -115,7 +115,7 @@ public class BinaryOptions extends javax.swing.JFrame {
                 .addComponent(btnRestriction)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnSubmit)
                     .addComponent(btnCancel))
                 .addContainerGap())
         );
@@ -133,17 +133,35 @@ public class BinaryOptions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBallotNameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-         JOptionPane.showConfirmDialog(this, "Are you sure that you want to create " + txtBallotName.getText() + " ballot?");
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if(!txtBallotName.getSelectedText().isEmpty() && !taPrompt.getText().isEmpty())
+        {
+            if(JOptionPane.showConfirmDialog(this, "Are you sure that you want to create " + txtBallotName.getText() + " ballot?") == 0)
+            {
+                this.setVisible(false);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Error, missing parameters.");
+        }
+        
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    public String getPrompt()
+    {
+        String strPrompt = new String();
+        
+        strPrompt = taPrompt.getText();
+        
+        return strPrompt;
+    }
     /**
      * @param args the command line arguments
      */
@@ -182,7 +200,7 @@ public class BinaryOptions extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnRestriction;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBallotName;

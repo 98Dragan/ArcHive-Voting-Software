@@ -94,8 +94,8 @@ public class MainForm extends javax.swing.JFrame {
 
     private void btnVoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoteActionPerformed
         // TODO add your handling code here:
-        
-        // will open the current election ballot
+        StudentForm vote = new StudentForm();
+        vote.setVisible(true);
     }//GEN-LAST:event_btnVoteActionPerformed
 
     private void btnHSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHSOActionPerformed

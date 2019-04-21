@@ -248,33 +248,36 @@ public class HSOForm extends javax.swing.JFrame {
 
     private void btnRemoveECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveECActionPerformed
         // TODO add your handling code here:
-        if(!(txtECID.getText()).isEmpty()){
-           ECList.removeElement(txtECID.getText());
-           txtECID.setText("");
-        }
-        else if(!((String) listECs.getSelectedValue()).isEmpty()){
-            ECList.removeElement(listECs.getSelectedValue());
-        }
-        else if(ECList.contains(null))
-        {
-            JOptionPane.showMessageDialog(this,"Election Commissioner not specified.");
-        }
+       
     }//GEN-LAST:event_btnRemoveECActionPerformed
 
     private void btnCertifyElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCertifyElectionActionPerformed
         // TODO add your handling code here:
-        if(!(txtEName.getText()).isEmpty()){
-           EList.removeElement(txtEName.getText());
-           txtEName.setText("");
-        }
-        else if(!listElections.getSelectedValue().toString().isEmpty()){
-            EList.removeElement(listElections.getSelectedValue());
-        }
-        else if(listElections.getSelectedValue().toString().equals(null))
+        if(!EList.isEmpty() || !txtEName.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(this,"Election not specified.");
+            if(!listElections.getSelectedValue().toString().isEmpty() || !txtEName.getText().isEmpty())
+            {
+                if(JOptionPane.showConfirmDialog(this, "Certify Election?") == 0)
+                {
+                    if(!(txtEName.getText()).isEmpty()){
+                       EList.removeElement(txtEName.getText());
+                       txtEName.setText("");
+                    }
+                    else if(!listElections.getSelectedValue().toString().isEmpty()){
+                        EList.removeElement(listElections.getSelectedValue());
+                    }
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Election not specified.");
+            }
         }
-        JOptionPane.showConfirmDialog(this, "Certify Election?");
+        else
+        {
+            JOptionPane.showMessageDialog(this,"Please create an election, there are no active elections");
+        }
+        
         
     }//GEN-LAST:event_btnCertifyElectionActionPerformed
 
@@ -298,22 +301,65 @@ public class HSOForm extends javax.swing.JFrame {
 
     private void btnRemoveElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveElectionActionPerformed
         // TODO add your handling code here:
-        if(!(txtEName.getText()).isEmpty()){
-           EList.removeElement(txtEName.getText());
-           txtEName.setText("");
-        }
-        else if(!((String) listElections.getSelectedValue()).isEmpty()){
-            EList.removeElement(listElections.getSelectedValue());
-        }
-        else if(EList.contains(null))
+        if(!EList.isEmpty())
         {
-            JOptionPane.showMessageDialog(this,"Election not specified");
+            if(!(txtEName.getText()).isEmpty())
+            {
+                if(EList.contains(txtEName.getText()))
+                        {
+                            EList.removeElement(txtEName.getText());
+                            txtEName.setText("");
+                            EList.removeElement(txtEName.getText());
+                        }
+                else
+                {
+                    JOptionPane.showMessageDialog(this, "The specified Election is not an active Election.");
+                }
+               
+            }
+            else if(!listElections.getSelectedValue().toString().isEmpty())
+            {
+                EList.removeElement(listElections.getSelectedValue());
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Election not specified.");
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "There are no active elections.");
         }
     }//GEN-LAST:event_btnRemoveElectionActionPerformed
 
     private void btnDisqualifyVoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisqualifyVoteActionPerformed
         // TODO add your handling code here:
         DisqualifyVoteDialog disqualifyvote = new DisqualifyVoteDialog(this, true);
+        if(!EList.isEmpty() || !txtEName.getText().isEmpty())
+        {
+            if(!listElections.getSelectedValue().toString().isEmpty() || !txtEName.getText().isEmpty())
+            {
+                if(!(txtEName.getText()).isEmpty() || !listElections.getSelectedValue().toString().isEmpty()) 
+                {
+                    if(!(txtEName.getText()).isEmpty()){
+                      
+                    }
+                    else if(!listElections.getSelectedValue().toString().isEmpty()){
+                       
+                    }
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Election not specified.");
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this,"Please create an election, there are no active elections");
+        }
+        
+        
         disqualifyvote.setVisible(true);
     }//GEN-LAST:event_btnDisqualifyVoteActionPerformed
 
@@ -354,6 +400,19 @@ public class HSOForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRecountVotesActionPerformed
 
+    public String getElection()
+    {
+        String strElection = new String();
+        
+        if(!EList.isEmpty())
+        {
+            for(int i =0; i < EList.getSize(); i++)
+            {
+                strElection = strElection + "\n" + EList.getElementAt(i);
+            }
+        }
+        return strElection;
+    }
     /**
      * @param args the command line arguments
      */

@@ -222,8 +222,17 @@ public class NonBinaryOptions extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(this, "Are you sure that you want to create " + txtBallotName.getText() + " ballot?");
-        this.setVisible(false);
+        if(!txtBallotName.getText().isEmpty()&& (!Candidate.isEmpty() || !txtCandidate.getText().isEmpty()))
+        {
+            if(JOptionPane.showConfirmDialog(this, "Are you sure that you want to create " + txtBallotName.getText() + " ballot?") == 0)
+            {
+            this.setVisible(false);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Error missing values.");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
