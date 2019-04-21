@@ -97,6 +97,11 @@ public class HSOForm extends javax.swing.JFrame {
         });
 
         btnRecountVotes.setText("Recount Votes");
+        btnRecountVotes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecountVotesActionPerformed(evt);
+            }
+        });
 
         btnCreateElection.setText("Create Election");
         btnCreateElection.addActionListener(new java.awt.event.ActionListener() {
@@ -138,6 +143,11 @@ public class HSOForm extends javax.swing.JFrame {
         });
 
         btnECClear.setText("Clear");
+        btnECClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnECClearActionPerformed(evt);
+            }
+        });
 
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
@@ -157,8 +167,8 @@ public class HSOForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(btnRemoveEC)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -170,15 +180,14 @@ public class HSOForm extends javax.swing.JFrame {
                             .addComponent(txtECID, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(lblEC)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnLogOut)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btnRemoveElection)
                                 .addGap(26, 26, 26)
                                 .addComponent(btnCertifyElection))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnDisqualifyVote, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnDisqualifyVote)
                                 .addGap(28, 28, 28)
                                 .addComponent(btnRecountVotes))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -187,8 +196,9 @@ public class HSOForm extends javax.swing.JFrame {
                                 .addComponent(txtEName, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(btnCreateElection, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(64, 64, 64))))
+                            .addComponent(btnCreateElection)
+                            .addGap(64, 64, 64)))
+                    .addComponent(btnLogOut, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -224,12 +234,12 @@ public class HSOForm extends javax.swing.JFrame {
                     .addComponent(btnDisqualifyVote))
                 .addGap(11, 11, 11)
                 .addComponent(btnCreateElection)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnLogOut)
-                .addGap(17, 17, 17))
+                .addGap(51, 51, 51))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(btnLogOut))
                 .addContainerGap())
         );
 
@@ -245,33 +255,45 @@ public class HSOForm extends javax.swing.JFrame {
         else if(!((String) listECs.getSelectedValue()).isEmpty()){
             ECList.removeElement(listECs.getSelectedValue());
         }
-        else{
-            JOptionPane.showMessageDialog(this,"Election Commissioner not specified");
+        else if(ECList.contains(null))
+        {
+            JOptionPane.showMessageDialog(this,"Election Commissioner not specified.");
         }
     }//GEN-LAST:event_btnRemoveECActionPerformed
 
     private void btnCertifyElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCertifyElectionActionPerformed
         // TODO add your handling code here:
         if(!(txtEName.getText()).isEmpty()){
-           EList.removeElement(txtECID.getText());
-           txtECID.setText("");
+           EList.removeElement(txtEName.getText());
+           txtEName.setText("");
         }
-        else if(!((String) listECs.getSelectedValue()).isEmpty()){
-            ECList.removeElement(listECs.getSelectedValue());
+        else if(!listElections.getSelectedValue().toString().isEmpty()){
+            EList.removeElement(listElections.getSelectedValue());
         }
-        else{
-            JOptionPane.showMessageDialog(this,"Election Commissioner not specified");
+        else if(listElections.getSelectedValue().toString().equals(null))
+        {
+            JOptionPane.showMessageDialog(this,"Election not specified.");
         }
-        JOptionPane.showConfirmDialog(this, "Election has been certified");
+        JOptionPane.showConfirmDialog(this, "Certify Election?");
         
     }//GEN-LAST:event_btnCertifyElectionActionPerformed
 
     private void btnCreateElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateElectionActionPerformed
         // TODO add your handling code here:
-        new CreateElection().setVisible(true);
-        
+
         CreateElectionDialog createelectiondialog = new CreateElectionDialog(this,true);
+        for(int i =0; i < ECList.getSize(); i++)
+        {
+        createelectiondialog.Commissioner.addElement(ECList.getElementAt(i));
+        }
         createelectiondialog.setVisible(true);
+        //
+        EList.addElement(createelectiondialog.getElection());
+        if(!ECList.contains(createelectiondialog.getCommissioner()))
+        {
+        ECList.addElement(createelectiondialog.getCommissioner());
+        }
+        
     }//GEN-LAST:event_btnCreateElectionActionPerformed
 
     private void btnRemoveElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveElectionActionPerformed
@@ -283,13 +305,16 @@ public class HSOForm extends javax.swing.JFrame {
         else if(!((String) listElections.getSelectedValue()).isEmpty()){
             EList.removeElement(listElections.getSelectedValue());
         }
-        else{
+        else if(EList.contains(null))
+        {
             JOptionPane.showMessageDialog(this,"Election not specified");
         }
     }//GEN-LAST:event_btnRemoveElectionActionPerformed
 
     private void btnDisqualifyVoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisqualifyVoteActionPerformed
         // TODO add your handling code here:
+        DisqualifyVoteDialog disqualifyvote = new DisqualifyVoteDialog(this, true);
+        disqualifyvote.setVisible(true);
     }//GEN-LAST:event_btnDisqualifyVoteActionPerformed
 
     private void txtECIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtECIDActionPerformed
@@ -304,6 +329,30 @@ public class HSOForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void btnECClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnECClearActionPerformed
+        // TODO add your handling code here:
+        if(!ECList.isEmpty())
+        {
+            ECList.clear();
+        }
+        else if(ECList.contains(null))
+        {
+            JOptionPane.showMessageDialog(this, "There are no Election Commissioners");
+        }
+    }//GEN-LAST:event_btnECClearActionPerformed
+
+    private void btnRecountVotesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecountVotesActionPerformed
+        // TODO add your handling code here:
+        if(!(listElections.getSelectedValue().toString()).isEmpty() || !txtEName.getText().isEmpty())
+        {
+            JOptionPane.showConfirmDialog(this, "Recount votes?");
+        }
+        else if(EList.contains(null))
+        {
+            JOptionPane.showMessageDialog(this, "Election not Specified.");
+        }
+    }//GEN-LAST:event_btnRecountVotesActionPerformed
 
     /**
      * @param args the command line arguments

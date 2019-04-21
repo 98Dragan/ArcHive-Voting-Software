@@ -6,6 +6,7 @@
 
 package archive.voting.application;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,9 +18,12 @@ public class CreateElectionDialog extends javax.swing.JDialog {
     /**
      * Creates new form CreateElectionDialog
      */
+    DefaultComboBoxModel Commissioner = new DefaultComboBoxModel();
     public CreateElectionDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        cbEC.setModel(Commissioner);
+        Commissioner.addElement(null);
     }
 
     /**
@@ -140,8 +144,24 @@ public class CreateElectionDialog extends javax.swing.JDialog {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(this, "Create " + txtElectionName.getText() + " Election with " + txtECID.getText() + " as the commissioner?");
-        this.setVisible(false);
+        String strID= null;
+        if(txtECID.getText().isEmpty())
+        {
+            strID = Commissioner.getSelectedItem().toString();
+        }
+        else
+        {
+            strID = txtECID.getText();
+        }
+        if(JOptionPane.showConfirmDialog(this, "Create " + txtElectionName.getText() + " Election with " + strID + " as the commissioner?") == 0)
+        {
+            JOptionPane.showMessageDialog(this, txtElectionName.getText() + " Election created.");
+            this.setVisible(false);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Error values not specified.");
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
@@ -153,6 +173,29 @@ public class CreateElectionDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbECActionPerformed
 
+    public String getElection()
+    {
+        String strElection = new String();
+        
+        strElection = txtElectionName.getText();
+        
+        return strElection;
+    }
+    
+    public String getCommissioner()
+    {
+        String strCommissioner = new String();
+        
+        if(Commissioner.getSize() == 0 || !(txtECID.getText()).isEmpty())
+        {
+            strCommissioner = txtECID.getText();
+        }
+        else if(!cbEC.toString().isEmpty() && txtECID.getText().isEmpty())
+        {
+            strCommissioner = Commissioner.getSelectedItem().toString();
+        }
+        return strCommissioner;
+    }
     /**
      * @param args the command line arguments
      */

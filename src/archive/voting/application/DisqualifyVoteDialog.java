@@ -6,6 +6,7 @@
 
 package archive.voting.application;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,9 +18,14 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
     /**
      * Creates new form DisqualifyVoteDialog
      */
+    DefaultComboBoxModel Student = new DefaultComboBoxModel();
     public DisqualifyVoteDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        cbStudentID.setModel(Student);
+        // Elements for demonstration only
+        Student.addElement("800192294");
+        Student.addElement("900192294");
     }
 
     /**
@@ -33,12 +39,12 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbStudentID = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        taReason = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -46,11 +52,16 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
 
         jLabel1.setText("ID#:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbStudentID.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbStudentID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbStudentIDActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        taReason.setColumns(20);
+        taReason.setRows(5);
+        jScrollPane1.setViewportView(taReason);
 
         jLabel2.setText("Reason:");
 
@@ -61,7 +72,12 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("Cancel");
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,14 +87,14 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnCancel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSubmit))
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -88,7 +104,7 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -96,7 +112,7 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmit)
-                    .addComponent(jButton1))
+                    .addComponent(btnCancel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -105,10 +121,35 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(this, "Election Created");
-        this.setVisible(false);
+        String strDisVote = this.getDisqualifyVote();
+        if(JOptionPane.showConfirmDialog(this, "Remove vote for: " + strDisVote) == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Student removed.");
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
+    private void cbStudentIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbStudentIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbStudentIDActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    public String getDisqualifyVote()
+    {
+        String strStudent = new String();
+        String strReason = new String();
+        
+        strStudent = Student.getSelectedItem().toString();
+        
+        strReason = taReason.getText();
+        
+        return "Student ID: " + strStudent + "\nReason: " + strReason;
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -152,13 +193,13 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox cbStudentID;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea taReason;
     // End of variables declaration//GEN-END:variables
 }
