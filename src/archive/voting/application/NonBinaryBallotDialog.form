@@ -120,13 +120,13 @@
                       <Component id="rbCandidate1" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="rbCandidate2" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="rbCandidate4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbCandidate5" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbCandidate7" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbCandidate8" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="rbCandidate3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbCandidate6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbCandidate9" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbCandidate10" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -143,17 +143,17 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="rbCandidate4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbCandidate5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbCandidate6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbCandidate7" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbCandidate8" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbCandidate9" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbCandidate10" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -197,7 +197,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbCandidate4ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+        <Component class="javax.swing.JRadioButton" name="rbCandidate5">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="bgCandidates"/>
@@ -205,10 +205,10 @@
             <Property name="text" type="java.lang.String" value="Candidate5"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbCandidate5ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+        <Component class="javax.swing.JRadioButton" name="rbCandidate6">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="bgCandidates"/>
@@ -216,7 +216,7 @@
             <Property name="text" type="java.lang.String" value="Candidate6"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+        <Component class="javax.swing.JRadioButton" name="rbCandidate7">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="bgCandidates"/>
@@ -224,7 +224,7 @@
             <Property name="text" type="java.lang.String" value="Candidate7"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+        <Component class="javax.swing.JRadioButton" name="rbCandidate8">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="bgCandidates"/>
@@ -232,12 +232,12 @@
             <Property name="text" type="java.lang.String" value="Candidate8"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+        <Component class="javax.swing.JRadioButton" name="rbCandidate9">
           <Properties>
             <Property name="text" type="java.lang.String" value="Candidate9"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+        <Component class="javax.swing.JRadioButton" name="rbCandidate10">
           <Properties>
             <Property name="text" type="java.lang.String" value="Candidate10"/>
           </Properties>

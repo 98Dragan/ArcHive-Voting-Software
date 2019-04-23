@@ -51,12 +51,12 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
         rbCandidate2 = new javax.swing.JRadioButton();
         rbCandidate3 = new javax.swing.JRadioButton();
         rbCandidate4 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        rbCandidate5 = new javax.swing.JRadioButton();
+        rbCandidate6 = new javax.swing.JRadioButton();
+        rbCandidate7 = new javax.swing.JRadioButton();
+        rbCandidate8 = new javax.swing.JRadioButton();
+        rbCandidate9 = new javax.swing.JRadioButton();
+        rbCandidate10 = new javax.swing.JRadioButton();
         btnSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -98,26 +98,26 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
             }
         });
 
-        bgCandidates.add(jRadioButton1);
-        jRadioButton1.setText("Candidate5");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        bgCandidates.add(rbCandidate5);
+        rbCandidate5.setText("Candidate5");
+        rbCandidate5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                rbCandidate5ActionPerformed(evt);
             }
         });
 
-        bgCandidates.add(jRadioButton2);
-        jRadioButton2.setText("Candidate6");
+        bgCandidates.add(rbCandidate6);
+        rbCandidate6.setText("Candidate6");
 
-        bgCandidates.add(jRadioButton3);
-        jRadioButton3.setText("Candidate7");
+        bgCandidates.add(rbCandidate7);
+        rbCandidate7.setText("Candidate7");
 
-        bgCandidates.add(jRadioButton4);
-        jRadioButton4.setText("Candidate8");
+        bgCandidates.add(rbCandidate8);
+        rbCandidate8.setText("Candidate8");
 
-        jRadioButton5.setText("Candidate9");
+        rbCandidate9.setText("Candidate9");
 
-        jRadioButton6.setText("Candidate10");
+        rbCandidate10.setText("Candidate10");
 
         javax.swing.GroupLayout pCandidatesLayout = new javax.swing.GroupLayout(pCandidates);
         pCandidates.setLayout(pCandidatesLayout);
@@ -129,13 +129,13 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
                     .addComponent(rbCandidate1)
                     .addComponent(rbCandidate2)
                     .addComponent(rbCandidate4)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
+                    .addComponent(rbCandidate5)
+                    .addComponent(rbCandidate7)
+                    .addComponent(rbCandidate8)
                     .addComponent(rbCandidate3)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
+                    .addComponent(rbCandidate6)
+                    .addComponent(rbCandidate9)
+                    .addComponent(rbCandidate10))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pCandidatesLayout.setVerticalGroup(
@@ -149,17 +149,17 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbCandidate4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(rbCandidate5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(rbCandidate6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(rbCandidate7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton4)
+                .addComponent(rbCandidate8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton5)
+                .addComponent(rbCandidate9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jRadioButton6))
+                .addComponent(rbCandidate10))
         );
 
         btnSubmit.setText("Submit");
@@ -237,9 +237,9 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbCandidate4ActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void rbCandidate5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCandidate5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_rbCandidate5ActionPerformed
 
     private void rbCandidate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCandidate1ActionPerformed
         // TODO add your handling code here:
@@ -328,17 +328,17 @@ public boolean chkCandidate()
     private javax.swing.ButtonGroup bgCandidates;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JLabel lblBallotName;
     private javax.swing.JPanel pCandidates;
     private javax.swing.JRadioButton rbCandidate1;
+    private javax.swing.JRadioButton rbCandidate10;
     private javax.swing.JRadioButton rbCandidate2;
     private javax.swing.JRadioButton rbCandidate3;
     private javax.swing.JRadioButton rbCandidate4;
+    private javax.swing.JRadioButton rbCandidate5;
+    private javax.swing.JRadioButton rbCandidate6;
+    private javax.swing.JRadioButton rbCandidate7;
+    private javax.swing.JRadioButton rbCandidate8;
+    private javax.swing.JRadioButton rbCandidate9;
     // End of variables declaration//GEN-END:variables
 }
