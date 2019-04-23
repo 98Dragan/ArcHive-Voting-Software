@@ -57,7 +57,7 @@ public class BallotDesignTemp extends javax.swing.JFrame {
             }
         });
 
-        btnFile.setText("Upload");
+        btnFile.setText("Import");
         btnFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFileActionPerformed(evt);

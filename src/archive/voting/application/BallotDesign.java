@@ -64,7 +64,7 @@ public class BallotDesign extends javax.swing.JFrame {
         jRadioButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/archive/voting/application/Logo_S.png"))); // NOI18N
         jRadioButton3.setIconTextGap(2);
 
-        btnFile.setText("Upload");
+        btnFile.setText("Import");
         btnFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFileActionPerformed(evt);
