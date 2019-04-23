@@ -54,7 +54,9 @@ public class BinaryOptions extends javax.swing.JFrame {
         jLabel1.setText("Prompt:");
 
         taPrompt.setColumns(20);
+        taPrompt.setLineWrap(true);
         taPrompt.setRows(5);
+        taPrompt.setWrapStyleWord(true);
         jScrollPane1.setViewportView(taPrompt);
 
         lblBallotName.setText("Ballot Name:");

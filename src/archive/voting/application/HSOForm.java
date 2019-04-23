@@ -310,9 +310,13 @@ public class HSOForm extends javax.swing.JFrame {
                     if(!(txtEName.getText()).isEmpty()){
                        EList.removeElement(txtEName.getText());
                        txtEName.setText("");
+                       //demo
+                       ECList.removeElement("600192294");
                     }
                     else if(!listElections.getSelectedValue().toString().isEmpty()){
                         EList.removeElement(listElections.getSelectedValue());
+                        //demo
+                        ECList.removeElement("800192294");
                     }
                 }
             }
@@ -358,6 +362,8 @@ public class HSOForm extends javax.swing.JFrame {
                             EList.removeElement(txtEName.getText());
                             txtEName.setText("");
                             EList.removeElement(txtEName.getText());
+                            //demonstration purpose only
+                            ECList.removeElement("900192294");
                         }
                 else
                 {
@@ -368,6 +374,8 @@ public class HSOForm extends javax.swing.JFrame {
             else if(!listElections.getSelectedValue().toString().isEmpty())
             {
                 EList.removeElement(listElections.getSelectedValue());
+                //demonstratin purpose only
+                ECList.removeElement("700192294");
             }
             else
             {

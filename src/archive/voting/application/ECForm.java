@@ -26,7 +26,7 @@ public class ECForm extends javax.swing.JFrame {
         election.addElement(hsoform.getElection());
         //for demonstration only
         election.addElement("ArcHive");
-        election.addElement("HomeComing");
+        election.addElement("Company");
     }
 
     /**
@@ -159,9 +159,10 @@ public class ECForm extends javax.swing.JFrame {
              BinaryBallotDialog binaryballotdialog = new BinaryBallotDialog(this, true);
              binaryballotdialog.setVisible(true);
         }
-        else if(cbElection.getSelectedItem().toString().equals("HomeComing"))
+        else if(cbElection.getSelectedItem().toString().equals("Company"))
         {
-            new HomeComing().setVisible(true);
+            NonBinaryBallotDialog nonbinaryballotdialog = new NonBinaryBallotDialog(this, true);
+            nonbinaryballotdialog.setVisible(true);
         }
         else
         {
