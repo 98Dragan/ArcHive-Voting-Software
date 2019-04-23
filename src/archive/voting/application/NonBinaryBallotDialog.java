@@ -30,6 +30,9 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
         rbCandidate3.setText("Good Enough Inc.");
         rbCandidate4.setText("Team Sinko");
         rbCandidate5.setText("Blue And Gold");
+        rbCandidate6.setText("Metis");
+        rbCandidate7.setText("Jet Stream Solutions");
+        rbCandidate8.setText("Agile 5");
     }
 
     /**
@@ -55,8 +58,6 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
         rbCandidate6 = new javax.swing.JRadioButton();
         rbCandidate7 = new javax.swing.JRadioButton();
         rbCandidate8 = new javax.swing.JRadioButton();
-        rbCandidate9 = new javax.swing.JRadioButton();
-        rbCandidate10 = new javax.swing.JRadioButton();
         btnSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -115,10 +116,6 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
         bgCandidates.add(rbCandidate8);
         rbCandidate8.setText("Candidate8");
 
-        rbCandidate9.setText("Candidate9");
-
-        rbCandidate10.setText("Candidate10");
-
         javax.swing.GroupLayout pCandidatesLayout = new javax.swing.GroupLayout(pCandidates);
         pCandidates.setLayout(pCandidatesLayout);
         pCandidatesLayout.setHorizontalGroup(
@@ -133,10 +130,8 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
                     .addComponent(rbCandidate7)
                     .addComponent(rbCandidate8)
                     .addComponent(rbCandidate3)
-                    .addComponent(rbCandidate6)
-                    .addComponent(rbCandidate9)
-                    .addComponent(rbCandidate10))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(rbCandidate6))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         pCandidatesLayout.setVerticalGroup(
             pCandidatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,10 +151,7 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
                 .addComponent(rbCandidate7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbCandidate8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rbCandidate9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rbCandidate10))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnSubmit.setText("Submit");
@@ -197,7 +189,7 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(SchoolLogo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                         .addComponent(CompanyLogo))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
@@ -331,7 +323,6 @@ public boolean chkCandidate()
     private javax.swing.JLabel lblBallotName;
     private javax.swing.JPanel pCandidates;
     private javax.swing.JRadioButton rbCandidate1;
-    private javax.swing.JRadioButton rbCandidate10;
     private javax.swing.JRadioButton rbCandidate2;
     private javax.swing.JRadioButton rbCandidate3;
     private javax.swing.JRadioButton rbCandidate4;
@@ -339,6 +330,5 @@ public boolean chkCandidate()
     private javax.swing.JRadioButton rbCandidate6;
     private javax.swing.JRadioButton rbCandidate7;
     private javax.swing.JRadioButton rbCandidate8;
-    private javax.swing.JRadioButton rbCandidate9;
     // End of variables declaration//GEN-END:variables
 }

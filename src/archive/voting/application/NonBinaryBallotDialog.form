@@ -59,7 +59,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="SchoolLogo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="29" max="32767" attributes="0"/>
                       <Component id="CompanyLogo" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -125,10 +125,8 @@
                       <Component id="rbCandidate8" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="rbCandidate3" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="rbCandidate6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="rbCandidate9" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="rbCandidate10" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="12" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -150,10 +148,7 @@
                   <Component id="rbCandidate7" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="rbCandidate8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="rbCandidate9" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="rbCandidate10" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -230,16 +225,6 @@
               <ComponentRef name="bgCandidates"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Candidate8"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="rbCandidate9">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Candidate9"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="rbCandidate10">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Candidate10"/>
           </Properties>
         </Component>
       </SubComponents>
