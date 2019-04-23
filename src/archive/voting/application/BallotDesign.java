@@ -6,6 +6,7 @@
 
 package archive.voting.application;
 
+import static java.lang.Thread.sleep;
 import javax.swing.JOptionPane;
 
 /**
