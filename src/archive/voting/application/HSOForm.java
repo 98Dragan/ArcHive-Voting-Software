@@ -343,12 +343,19 @@ public class HSOForm extends javax.swing.JFrame {
         }
         createelectiondialog.setVisible(true);
         //
-        EList.addElement(createelectiondialog.getElection());
-        if(!ECList.contains(createelectiondialog.getCommissioner()))
+        if(!createelectiondialog.getElection().equals("") && !createelectiondialog.getCommissioner().equals(""))
         {
-        ECList.addElement(createelectiondialog.getCommissioner());
+        EList.addElement(createelectiondialog.getElection());
+            if(!ECList.contains(createelectiondialog.getCommissioner()))
+            {
+            ECList.addElement(createelectiondialog.getCommissioner());
+            }
         }
-        
+        else
+        {
+            EList.removeElement(createelectiondialog.getElection());
+            ECList.removeElement(createelectiondialog.getCommissioner());
+        }
     }//GEN-LAST:event_btnCreateElectionActionPerformed
 
     private void btnRemoveElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveElectionActionPerformed
