@@ -25,7 +25,9 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
         initComponents();
         //Demonstration only
         lblBallotName.setText("Best Prototype");
-        //rbCandidate1.setText(null);
+        rbCandidate1.setText("ArcHive");
+        rbCandidate2.setText("It Be Like That Sometimes");
+        rbCandidate3.setText("Good Enough Inc.");
         
     }
 
@@ -75,6 +77,11 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
 
         bgCandidates.add(rbCandidate1);
         rbCandidate1.setText("Candidate1");
+        rbCandidate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbCandidate1ActionPerformed(evt);
+            }
+        });
 
         bgCandidates.add(rbCandidate2);
         rbCandidate2.setText("Candidate2");
@@ -232,6 +239,10 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void rbCandidate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCandidate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbCandidate1ActionPerformed
 public boolean chkCandidate()
     {
         Boolean check = false;

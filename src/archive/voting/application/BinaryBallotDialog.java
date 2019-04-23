@@ -24,7 +24,7 @@ public class BinaryBallotDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         //demonstration only
-        taPrompt.setText("Will you hire ArcHive?");
+        taPrompt.setText("Will Morgantown University hire ArcHive to continue development on Archive Voting Software?");
     }
     /**
      * This method is called from within the constructor to initialize the form.
