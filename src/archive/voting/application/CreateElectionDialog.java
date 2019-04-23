@@ -23,7 +23,7 @@ public class CreateElectionDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         cbEC.setModel(Commissioner);
-        Commissioner.addElement(null);
+        Commissioner.addElement("");
     }
 
     /**
@@ -162,28 +162,25 @@ public class CreateElectionDialog extends javax.swing.JDialog {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        String strID= null;
-        if(txtECID.getText().isEmpty())
+        if(!txtElectionName.getText().isEmpty() && !this.getCommissioner().isEmpty())
         {
-            strID = Commissioner.getSelectedItem().toString();
+            if(JOptionPane.showConfirmDialog(this, "Create " + txtElectionName.getText() + " Election with " + this.getCommissioner() + " as the commissioner?") == 0)
+            {
+                JOptionPane.showMessageDialog(this, txtElectionName.getText() + " Election created.");
+                this.setVisible(false);
+            }
         }
         else
         {
-            strID = txtECID.getText();
-        }
-        if(JOptionPane.showConfirmDialog(this, "Create " + txtElectionName.getText() + " Election with " + strID + " as the commissioner?") == 0)
-        {
-            JOptionPane.showMessageDialog(this, txtElectionName.getText() + " Election created.");
-            this.setVisible(false);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Error values not specified.");
+            JOptionPane.showMessageDialog(this, "Missing parameters");
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        txtElectionName.setText("");
+        txtECID.setText("");
+        cbEC.setSelectedItem("");
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelActionPerformed
 
@@ -211,6 +208,10 @@ public class CreateElectionDialog extends javax.swing.JDialog {
         else if(!cbEC.toString().isEmpty() && txtECID.getText().isEmpty())
         {
             strCommissioner = Commissioner.getSelectedItem().toString();
+        }
+        else
+        {
+            strCommissioner = "";
         }
         return strCommissioner;
     }

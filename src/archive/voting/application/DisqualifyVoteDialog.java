@@ -150,11 +150,18 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         String strDisVote = this.getDisqualifyVote();
-        if(JOptionPane.showConfirmDialog(this, "Remove vote for: " + strDisVote) == 0)
+        if(!taReason.getText().isEmpty() && !cbStudentID.getSelectedItem().toString().isEmpty())
         {
-            JOptionPane.showMessageDialog(this, "Student removed.");
-            this.setVisible(false);
+            if(JOptionPane.showConfirmDialog(this, "Remove vote for: " + strDisVote) == 0)
+            {
+                JOptionPane.showMessageDialog(this, "Student's vote removed.");
+                this.setVisible(false);
+            }
         }
+        else
+            {
+                JOptionPane.showMessageDialog(this, "Missing parameters.");
+            }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void cbStudentIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbStudentIDActionPerformed

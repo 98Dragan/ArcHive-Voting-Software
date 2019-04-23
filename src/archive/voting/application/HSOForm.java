@@ -268,7 +268,35 @@ public class HSOForm extends javax.swing.JFrame {
 
     private void btnRemoveECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveECActionPerformed
         // TODO add your handling code here:
-       
+      if(!ECList.isEmpty())
+        {
+            if(!(txtECID.getText()).isEmpty())
+            {
+                if(ECList.contains(txtECID.getText()))
+                        {
+                            ECList.removeElement(txtECID.getText());
+                            txtECID.setText("");
+                            ECList.removeElement(txtECID.getText());
+                        }
+                else
+                {
+                    JOptionPane.showMessageDialog(this, "The specified Election Commissioner is not an active Election Commissioner.");
+                }
+               
+            }
+            else if(!listElections.getSelectedValue().toString().isEmpty())
+            {
+                EList.removeElement(listElections.getSelectedValue());
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Election Commissioner not specified.");
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "There are no active Elections Commissioners.");
+        }
     }//GEN-LAST:event_btnRemoveECActionPerformed
 
     private void btnCertifyElectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCertifyElectionActionPerformed
@@ -359,6 +387,7 @@ public class HSOForm extends javax.swing.JFrame {
         {
             if(!listElections.getSelectedValue().toString().isEmpty() || !txtEName.getText().isEmpty())
             {
+                
                 if(!(txtEName.getText()).isEmpty() || !listElections.getSelectedValue().toString().isEmpty()) 
                 {
                     if(!(txtEName.getText()).isEmpty()){
@@ -368,6 +397,8 @@ public class HSOForm extends javax.swing.JFrame {
                        
                     }
                 }
+                
+                disqualifyvote.setVisible(true);
             }
             else
             {
@@ -378,9 +409,6 @@ public class HSOForm extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this,"Please create an election, there are no active elections");
         }
-        
-        
-        disqualifyvote.setVisible(true);
     }//GEN-LAST:event_btnDisqualifyVoteActionPerformed
 
     private void txtECIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtECIDActionPerformed
@@ -398,25 +426,41 @@ public class HSOForm extends javax.swing.JFrame {
 
     private void btnECClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnECClearActionPerformed
         // TODO add your handling code here:
-        if(!ECList.isEmpty())
+         if(!ECList.isEmpty())
         {
             ECList.clear();
         }
-        else if(ECList.contains(null))
+        else
         {
-            JOptionPane.showMessageDialog(this, "There are no Election Commissioners");
+            JOptionPane.showMessageDialog(this, "There are no active Elections Commissioners.");
         }
     }//GEN-LAST:event_btnECClearActionPerformed
 
     private void btnRecountVotesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecountVotesActionPerformed
         // TODO add your handling code here:
-        if(!(listElections.getSelectedValue().toString()).isEmpty() || !txtEName.getText().isEmpty())
+        if(!EList.isEmpty() || !txtEName.getText().isEmpty())
         {
-            JOptionPane.showConfirmDialog(this, "Recount votes?");
+            if(!listElections.getSelectedValue().toString().isEmpty() || !txtEName.getText().isEmpty())
+            {
+                if(!(txtEName.getText()).isEmpty() || !listElections.getSelectedValue().toString().isEmpty()) 
+                {
+                    if(!(txtEName.getText()).isEmpty()){
+                      
+                    }
+                    else if(!listElections.getSelectedValue().toString().isEmpty()){
+                       
+                    }
+                }
+                JOptionPane.showMessageDialog(this, "Votes recounted");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Election not specified.");
+            }
         }
-        else if(EList.contains(null))
+        else
         {
-            JOptionPane.showMessageDialog(this, "Election not Specified.");
+            JOptionPane.showMessageDialog(this,"Please create an election, there are no active elections");
         }
     }//GEN-LAST:event_btnRecountVotesActionPerformed
 
