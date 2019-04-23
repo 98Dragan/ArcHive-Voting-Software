@@ -25,7 +25,7 @@ public class DisqualifyVoteDialog extends javax.swing.JDialog {
         cbStudentID.setModel(Student);
         // Elements for demonstration only
         Student.addElement("800192294");
-        Student.addElement("900192294");
+        Student.addElement("600192294");
     }
 
     /**
