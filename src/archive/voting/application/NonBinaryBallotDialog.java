@@ -29,6 +29,7 @@ public class NonBinaryBallotDialog extends javax.swing.JDialog {
         rbCandidate2.setText("It Be Like That Sometimes");
         rbCandidate3.setText("Good Enough Inc.");
         rbCandidate4.setText("Team Sinko");
+        rbCandidate5.setText("Blue And Gold");
     }
 
     /**
